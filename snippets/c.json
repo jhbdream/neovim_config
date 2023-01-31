@@ -1,0 +1,26 @@
+{
+	"extern C": {
+		"prefix": "nocpp",
+		"body": [
+			"#ifdef __cplusplus",
+			"extern \"C\" {",
+			"#endif\n",
+			"$0\n",
+			"#ifdef __cplusplus",
+			"} /* extern \"C\" */",
+			"#endif"
+		],
+		"description": "Disable C++ name mangling in C headers"
+	},
+
+	"include once": {
+		"prefix": "once",
+		"body": [
+			"#ifndef ${1:__${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H__}",
+			"#define $1\n",
+			"\n",
+			"#endif /* end of include guard: $1 */"
+		],
+		"description": "Header include guard"
+	}
+}
