@@ -31,7 +31,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+Plug 'vim-scripts/DoxygenToolkit.vim'
+
 call plug#end()
-
-
 

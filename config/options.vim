@@ -107,3 +107,10 @@ let g:clipboard = {
 " c 头文件文件类型默认是 cpp
 let g:c_syntax_for_h = 1
 
+" Doxgen
+let g:DoxygenToolkit_briefTag_pre="@brief "
+let g:DoxygenToolkit_paramTag_pre="@param "
+let g:DoxygenToolkit_returnTag="@returns "
+let g:DoxygenToolkit_authorName="jihb "
+
+tnoremap <Esc> <C-\><C-n>

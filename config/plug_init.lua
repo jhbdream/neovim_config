@@ -54,19 +54,18 @@ cmp.setup({
   },
 
   sorting = {
-    priority_weight = 0,
+    priority_weight = 2,
     comparators = {
-      compare.sort_text,
-      -- compare.offset,
-      -- compare.exact,
-      -- compare.scopes,
-      -- compare.score,
-      -- compare.recently_used,
-      -- compare.locality,
-      -- compare.kind,
-      -- compare.sort_text,
-      -- compare.length,
-      -- compare.order,
+     compare.sort_text,
+     -- compare.offset,
+     -- compare.kind,
+     -- compare.exact,
+     -- compare.scopes,
+     -- compare.score,
+     -- compare.locality,
+     -- compare.length,
+     -- compare.order,
+     -- compare.recently_used,
     },
   },
 
@@ -135,22 +134,22 @@ cmp.setup.filetype('gitcommit', {
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
+ cmp.setup.cmdline({ '/', '?' }, {
+   mapping = cmp.mapping.preset.cmdline(),
+   sources = {
+     { name = 'buffer' }
+   }
+ })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
+ cmp.setup.cmdline(':', {
+   mapping = cmp.mapping.preset.cmdline(),
+   sources = cmp.config.sources({
+     { name = 'path' }
+   }, {
+     { name = 'cmdline' }
+   })
+ })
 
 -- Set up lspconfig.
 local keymap = vim.keymap
@@ -280,7 +279,7 @@ require('telescope').setup {
     lsp_references = {
       trim_text = true,
       show_line =false,
-      initial_mode = "normal"
+      initial_mode = "insert"
     },
 
     lsp_document_symbols = {
@@ -466,3 +465,4 @@ local cfg = {
 
 -- recommended:
 require'lsp_signature'.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
+
